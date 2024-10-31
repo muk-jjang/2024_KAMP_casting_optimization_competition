@@ -21,3 +21,18 @@ class paths:
     ml_train_path = 'casting/data/processed_data/train.csv'
     ml_valid_path = 'casting/data/processed_data/valid.csv'
     ml_test_path = 'casting/data/processed_data/test.csv'
+
+
+class ranges :
+    outlier_set = {
+    'biscuit_thickness' : [0, 100],
+    'low_section_speed' : [0, 160],
+    'upper_mold_temp1' : [0, 380],
+    'upper_mold_temp2' : [0, 390],
+    'lower_mold_temp2' : [0, 510],
+    'lower_mold_temp3' : [290, 1500],
+    'physical_strength' : [0 ,740],
+    'Coolant_temperature' : [15, 60],
+    }
+    
+

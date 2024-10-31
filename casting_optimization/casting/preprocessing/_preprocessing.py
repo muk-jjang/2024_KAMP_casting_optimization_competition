@@ -5,6 +5,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import DBSCAN
 from sklearn.model_selection import train_test_split
 
+from casting.configuration import ranges
+
 
 def drop_null(df) :
     return df.dropna()
@@ -14,6 +16,15 @@ def remove_extreme_outliers(df, column, lower_percentile=0.01, upper_percentile=
     lower_bound = df[column].quantile(lower_percentile)
     upper_bound = df[column].quantile(upper_percentile)
     return df[(df[column] >= lower_bound) & (df[column] <= upper_bound)]
+
+def remove_outlier(df):
+    dict_set = ranges.outlier_set
+    for col in dict_set.keys():
+
+        min_value = dict_set[col][0]
+        max_value = dict_set[col][1]
+    return df[(df[col] >= min_value) & (df[col] <= max_value)]
+
 
 def split_by_dbscan(data, folder_path):
 

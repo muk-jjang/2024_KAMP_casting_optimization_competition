@@ -1,1 +1,1 @@
-from .config import paths, columns
+from .config import paths, columns, ranges
