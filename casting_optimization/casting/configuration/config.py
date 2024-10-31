@@ -22,6 +22,15 @@ class paths:
     ml_valid_path = 'casting/data/processed_data/valid.csv'
     ml_test_path = 'casting/data/processed_data/test.csv'
 
+    dl_train_path = 'casting/data/scaled_data/train.csv'
+    dl_valid_path = 'casting/data/scaled_data/valid.csv'
+    dl_test_path = 'casting/data/scaled_data/test.csv'
+
+    X_scaler_path = 'casting/data/scaler/X_scaler.pickle'
+    y_scaler_path = 'casting/data/scaler/y_scaler.pickle'
+
+    label_encoding_path = 'casting/data/scaler/label_encoding.pickle'
+
 
 class ranges :
     outlier_set = {
@@ -34,5 +43,8 @@ class ranges :
     'physical_strength' : [0 ,740],
     'Coolant_temperature' : [15, 60],
     }
+
+class params :
+    model_name = 'FTT'
     
 

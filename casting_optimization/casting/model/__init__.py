@@ -1,1 +1,0 @@
-from tab_transformer_pytorch.ft_transformer import FTTransformer

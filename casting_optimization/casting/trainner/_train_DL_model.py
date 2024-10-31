@@ -1,7 +1,4 @@
 from casting.model.pytorch_tabnet.tab_model import TabNetClassifier
-from sklearn.metrics import f1_score
-from pytorch_tabnet.metrics import Metric
-
 
 def train_tabnet(X_train, X_valid, y_train, y_valid):
     y_train, y_valid = y_train.astype('int'), y_valid.astype('int') 

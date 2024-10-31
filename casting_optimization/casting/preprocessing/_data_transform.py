@@ -1,18 +1,23 @@
 from sklearn import preprocessing
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 import pickle
 
 ## category label encoding
-def label_encoding(df, cols) :
-    le = preprocessing.LabelEncoder()
-    for col in cols :
-        df[col] = le.fit_transform(df[col])
-    return df
+def save_label_encoding(df, cols, paths) :
 
-## numeric_data_scainlg
-def save_min_max_scale(df, X, y, X_path, y_path):
-    X_pred_scaler = MinMaxScaler()
-    y_pred_scaler = MinMaxScaler()
+    le = preprocessing.LabelEncoder()
+
+    for col in cols :
+        le.fit(df[col])
+
+    with open(paths, 'wb') as file:
+        pickle.dump(le, file)
+
+
+def save_scaler(df, X, y, X_path, y_path):
+
+    X_pred_scaler = StandardScaler()
+    y_pred_scaler = StandardScaler()
 
     X_pred_df = df[X]
     y_pred_df = df[y]
@@ -24,3 +29,5 @@ def save_min_max_scale(df, X, y, X_path, y_path):
 
     with open(y_path, 'wb') as file:
         pickle.dump(y_pred_scaler, file)
+    
+    
