@@ -1,4 +1,5 @@
 
+import pandas as pd
 import xgboost as xgb
 import lightgbm as lgb
 from sklearn.model_selection import train_test_split
@@ -7,7 +8,7 @@ from sklearn.metrics import accuracy_score
 
 from casting.configuration import columns
 from sklearn.ensemble import ExtraTreesClassifier
-
+from imblearn.over_sampling import SMOTE
 
 # XGBoost 모델
 def train_xgboost(train, valid):
@@ -23,12 +24,15 @@ def train_xgboost(train, valid):
 
 # LightGBM 모델
 def train_lightgbm(train, valid):
+
+
     X_train, y_train = train[columns.input_columns], train[columns.target_column]
     X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
 
     lgb_model = lgb.LGBMClassifier(random_state=42)
     lgb_model.fit(X_train, y_train.values, 
                   eval_set=[(X_valid, y_valid.values)],
+                  categorical_feature=columns.category_columns
                   )  # 카테고리 변수 추가)
     return lgb_model
 
