@@ -25,11 +25,14 @@ class paths:
     dl_train_path = 'casting/data/scaled_data/train.csv'
     dl_valid_path = 'casting/data/scaled_data/valid.csv'
     dl_test_path = 'casting/data/scaled_data/test.csv'
+    dl_all_path = 'casting/data/scaled_data/all.csv'
 
     X_scaler_path = 'casting/data/scaler/X_scaler.pickle'
     y_scaler_path = 'casting/data/scaler/y_scaler.pickle'
 
     label_encoding_path = 'casting/data/scaler/label_encoding.pickle'
+
+    FTT_path = 'casting/result/predictor_result/'
 
 
 class ranges :
@@ -46,5 +49,6 @@ class ranges :
 
 class params :
     model_name = 'FTT'
+    # model_name = 'ml'
     
 

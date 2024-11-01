@@ -10,7 +10,11 @@ from sklearn.ensemble import ExtraTreesClassifier
 
 
 # XGBoost 모델
-def train_xgboost(X_train, X_valid, y_train, y_valid):
+def train_xgboost(train, valid):
+
+    X_train, y_train = train[columns.input_columns], train[columns.target_column]
+    X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
+
     xgb_model = xgb.XGBClassifier(eval_metric='logloss', use_label_encoder=False, random_state=42)
     xgb_model.fit(X_train, y_train.values, 
                   eval_set=[(X_train, y_train), (X_valid, y_valid.values)], 
@@ -19,7 +23,9 @@ def train_xgboost(X_train, X_valid, y_train, y_valid):
     return xgb_model
 
 # LightGBM 모델
-def train_lightgbm(X_train, X_valid, y_train, y_valid):
+def train_lightgbm(train, valid):
+    X_train, y_train = train[columns.input_columns], train[columns.target_column]
+    X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
 
     lgb_model = lgb.LGBMClassifier(random_state=42)
     lgb_model.fit(X_train, y_train.values, 
@@ -28,7 +34,11 @@ def train_lightgbm(X_train, X_valid, y_train, y_valid):
     return lgb_model
 
 
-def train_extra_trees(X_train, X_valid, y_train, y_valid):
+def train_extra_trees(train, valid):
+
+    X_train, y_train = train[columns.input_columns], train[columns.target_column]
+    X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
+
     # Extra Trees 모델 생성
     extra_trees_model = ExtraTreesClassifier(random_state=42,  n_estimators=300)
     # 모델 학습

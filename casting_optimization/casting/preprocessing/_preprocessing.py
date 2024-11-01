@@ -23,7 +23,9 @@ def remove_outlier(df):
 
         min_value = dict_set[col][0]
         max_value = dict_set[col][1]
-    return df[(df[col] >= min_value) & (df[col] <= max_value)]
+
+        df = df[(df[col] >= min_value) & (df[col] <= max_value)]
+    return df
 
 
 def split_by_dbscan(data, folder_path):

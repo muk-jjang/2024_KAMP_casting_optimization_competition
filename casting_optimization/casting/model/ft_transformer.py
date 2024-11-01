@@ -177,7 +177,8 @@ class FTTransformer(nn.Module):
         self.to_logits = nn.Sequential(
             nn.LayerNorm(dim),
             nn.ReLU(),
-            nn.Linear(dim, dim_out)
+            nn.Linear(dim, dim_out),
+            nn.Sigmoid()
         )
 
     def forward(self, x_categ, x_numer, return_attn = False):

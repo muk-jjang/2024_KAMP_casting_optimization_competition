@@ -34,12 +34,16 @@ def load_data(model_kind = 'ml'):
         X_valid_num = X_scaler.transform(valid[columns.numeric_columns])
         X_test_num = X_scaler.transform(test[columns.numeric_columns])
 
-        X_train = np.hstack((X_train_num, np.array(train_cat).reshape(-1, 1)))
-        X_valid = np.hstack((X_valid_num, np.array(valid_cat).reshape(-1, 1)))
-        X_test = np.hstack((X_test_num, np.array(test_cat).reshape(-1, 1)))
+        X_train = pd.DataFrame(X_train_num, columns=columns.numeric_columns)
+        X_valid = pd.DataFrame(X_valid_num, columns=columns.numeric_columns)
+        X_test = pd.DataFrame(X_test_num, columns=columns.numeric_columns)
 
-        y_train = train[columns.target_column].values
-        y_valid = valid[columns.target_column].values
-        y_test = test[columns.target_column].values
+        X_train[columns.category_columns[0]] = train_cat
+        X_valid[columns.category_columns[0]] = valid_cat
+        X_test[columns.category_columns[0]] = test_cat
 
-    return X_train, y_train, X_valid, y_valid, X_test, y_test
+        y_train = train[columns.target_column]
+        y_valid = valid[columns.target_column]
+        y_test = test[columns.target_column]
+
+    return pd.concat([X_train, y_train], axis=1), pd.concat([X_valid, y_valid], axis=1), pd.concat([X_test, y_test], axis=1)
