@@ -4,18 +4,9 @@ from casting.configuration.config import paths,columns
 import pickle
 
 
-def load_data(model_kind = 'ml'):
+def load_data(model_kind = 'LGBM'):
 
-    if model_kind == 'ml':
-        train = pd.read_csv(paths.ml_train_path)
-        valid = pd.read_csv(paths.ml_valid_path)
-        test = pd.read_csv(paths.ml_test_path)
-
-        X_train, y_train = train[columns.input_columns], train[columns.target_column]
-        X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
-        X_test, y_test = test[columns.input_columns], test[columns.target_column]
-
-    elif model_kind == 'FTT':
+    if model_kind == 'FTT':
         train = pd.read_csv(paths.dl_train_path)
         valid = pd.read_csv(paths.dl_valid_path)
         test = pd.read_csv(paths.dl_test_path)
@@ -45,5 +36,13 @@ def load_data(model_kind = 'ml'):
         y_train = train[columns.target_column]
         y_valid = valid[columns.target_column]
         y_test = test[columns.target_column]
+    else :
+        train = pd.read_csv(paths.ml_train_path)
+        valid = pd.read_csv(paths.ml_valid_path)
+        test = pd.read_csv(paths.ml_test_path)
+
+        X_train, y_train = train[columns.input_columns], train[columns.target_column]
+        X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
+        X_test, y_test = test[columns.input_columns], test[columns.target_column]
 
     return pd.concat([X_train, y_train], axis=1), pd.concat([X_valid, y_valid], axis=1), pd.concat([X_test, y_test], axis=1)

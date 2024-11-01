@@ -32,7 +32,7 @@ class paths:
 
     label_encoding_path = 'casting/data/scaler/label_encoding.pickle'
 
-    FTT_path = 'casting/result/predictor_result/'
+    FTT_path = 'casting/result/predictor_model/FTT'
 
 
 class ranges :
@@ -48,7 +48,7 @@ class ranges :
     }
 
 class params :
-    model_name = 'FTT'
-    # model_name = 'ml'
+    # model_name = 'FTT'
+    model_name = 'LGBM'
     
 

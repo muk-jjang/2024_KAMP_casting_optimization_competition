@@ -11,12 +11,6 @@ from casting.configuration import ranges
 def drop_null(df) :
     return df.dropna()
 
-def remove_extreme_outliers(df, column, lower_percentile=0.01, upper_percentile=0.99):
-    # 하위와 상위 퍼센트 경계를 설정하고, 그 안에 속하는 값들만 유지
-    lower_bound = df[column].quantile(lower_percentile)
-    upper_bound = df[column].quantile(upper_percentile)
-    return df[(df[column] >= lower_bound) & (df[column] <= upper_bound)]
-
 def remove_outlier(df):
     dict_set = ranges.outlier_set
     for col in dict_set.keys():

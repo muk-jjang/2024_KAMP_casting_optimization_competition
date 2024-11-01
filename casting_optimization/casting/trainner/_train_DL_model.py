@@ -75,7 +75,7 @@ def train_FTT(train, valid):
 
     model.to(device)
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
     lr_schedulers= torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer, mode="min",
                                     min_lr=1e-5,
                                     factor=0.5,

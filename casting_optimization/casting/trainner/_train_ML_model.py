@@ -18,7 +18,6 @@ def train_xgboost(train, valid):
     xgb_model = xgb.XGBClassifier(eval_metric='logloss', use_label_encoder=False, random_state=42)
     xgb_model.fit(X_train, y_train.values, 
                   eval_set=[(X_train, y_train), (X_valid, y_valid.values)], 
-                  early_stopping_rounds=20, 
                   verbose=False)
     return xgb_model
 
