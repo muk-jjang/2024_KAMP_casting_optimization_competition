@@ -59,7 +59,7 @@ class params :
     # model_name = 'FTT'
     # model_name = 'TABNET'
     # model_name = 'XGB'
-    # model_name = 'EXT'
-    model_name = 'LGBM'
+    model_name = 'EXT'
+    # model_name = 'LGBM'
     
 

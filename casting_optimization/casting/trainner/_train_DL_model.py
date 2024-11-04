@@ -18,7 +18,10 @@ torch.cuda.manual_seed_all(seed)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
-def train_tabnet(X_train, X_valid, y_train, y_valid):
+def train_tabnet(train, valid):
+    X_train, y_train = train[columns.input_columns], train[columns.target_column]
+    X_valid, y_valid = valid[columns.input_columns], valid[columns.target_column]
+    
     y_train, y_valid = y_train.astype('int'), y_valid.astype('int') 
 
     y_train = y_train.values.reshape(1, -1)[0]

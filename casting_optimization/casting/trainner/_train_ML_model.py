@@ -38,8 +38,10 @@ def train_lightgbm(train, valid):
 
 
 def train_extra_trees(train, valid):
-
-    X_train, y_train = train[columns.input_columns], train[columns.target_column]
+    
+    ## 별도 valid set이 없기때문에 모두 train으로 사용
+    df = pd.concat([train, valid], axis=0)
+    X_train, y_train = df[columns.input_columns], df[columns.target_column]
 
     # Extra Trees 모델 생성
     extra_trees_model = ExtraTreesClassifier(random_state=42,  n_estimators=300)
