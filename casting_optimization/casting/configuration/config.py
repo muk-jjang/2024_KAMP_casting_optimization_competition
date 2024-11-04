@@ -52,6 +52,7 @@ class ranges :
     'lower_mold_temp3' : [290, 1500],
     'physical_strength' : [0 ,740],
     'Coolant_temperature' : [15, 60],
+    'sleeve_temperature' : [200, 700],
     }
 
 class params :
