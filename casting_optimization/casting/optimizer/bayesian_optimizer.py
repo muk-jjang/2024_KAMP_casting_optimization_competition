@@ -44,7 +44,8 @@ class BayesianOptimizer:
         
         optimizer = BayesianOptimization(
             f=objective,
-            pbounds=self.config.param_bounds
+            pbounds=self.config.param_bounds,
+            verbose = self.config.verbose
         )
         
         optimizer.maximize(
