@@ -34,6 +34,10 @@ class paths:
     dl_test_path = 'casting/data/scaled_data/test.csv'
     dl_all_path = 'casting/data/scaled_data/all.csv'
 
+    external_temp_path = 'casting/data/external_data/temp.csv'
+    external_rain_path = 'casting/data/external_data/rain.csv'
+    external_humi_path = 'casting/data/external_data/humi.csv'
+
     X_scaler_path = 'casting/data/scaler/X_scaler.pickle'
     y_scaler_path = 'casting/data/scaler/y_scaler.pickle'
 
