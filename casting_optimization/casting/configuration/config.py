@@ -72,3 +72,4 @@ class optimization:
     init_points: int = 5
     n_iter: int = 10
     n_processes: int = 16
+    verobse: int = 0
