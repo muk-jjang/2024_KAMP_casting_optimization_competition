@@ -20,7 +20,7 @@ class columns:
                          'sleeve_temperature', 'physical_strength', 'Coolant_temperature', 'EMS_operation_time',
                   'mold_code', 'molten_temp']
     
-    action_columns = ['upper_mold_temp2', 'lower_mold_temp2', 'cast_pressure']
+    optimize_columns = ['upper_mold_temp2', 'lower_mold_temp2', 'cast_pressure']
 
 class paths:
     origin_path = 'casting/data/raw/casting_data_origin.csv'
