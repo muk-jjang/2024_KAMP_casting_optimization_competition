@@ -44,15 +44,22 @@ class paths:
 
 class ranges :
     outlier_set = {
-    'biscuit_thickness' : [0, 100],
+    'molten_temp' : [0, 735],
+    'facility_operation_cycleTime' : [69, 268],
+    'production_cycletime' : [0, 360],
     'low_section_speed' : [0, 160],
-    'upper_mold_temp1' : [0, 380],
-    'upper_mold_temp2' : [0, 390],
-    'lower_mold_temp2' : [0, 510],
-    'lower_mold_temp3' : [290, 1500],
-    'physical_strength' : [0 ,740],
-    'Coolant_temperature' : [15, 60],
-    'sleeve_temperature' : [200, 700],
+    'high_section_speed' : [0, 340],
+    'cast_pressure' : [41, 344],
+    'biscuit_thickness' : [0, 422],
+    'upper_mold_temp1' : [18, 332],
+    'upper_mold_temp2' : [15, 241],
+    'upper_mold_temp3' : [42, 1449],
+    'lower_mold_temp1' : [18, 367],
+    'lower_mold_temp2' : [20, 492],
+    'lower_mold_temp3' : [299, 1449],
+    'sleeve_temperature' : [23, 1449],
+    'physical_strength' : [0 ,736],
+    'Coolant_temperature' : [16, 49],
     }
 
 class params :
@@ -65,9 +72,9 @@ class params :
 class optimization:
     """Configuration for the Bayesian optimization process."""
     param_bounds: param_bounds={
-        'lower_mold_temp2': (135, 333),
-        'cast_pressure': (300, 1000),
-        'upper_mold_temp2': (100, 270)
+        'cast_pressure': (40, 380),
+        'lower_mold_temp2': (20, 540),
+        'upper_mold_temp2': (15, 270)
     }
     init_points: int = 5
     n_iter: int = 10
