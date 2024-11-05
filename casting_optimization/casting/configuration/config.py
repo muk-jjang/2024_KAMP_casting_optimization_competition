@@ -16,11 +16,11 @@ class columns:
                   'mold_code']
     
     context_columns = ['facility_operation_cycleTime', 'production_cycletime', 'low_section_speed', 'high_section_speed', 
-                       'biscuit_thickness', 'upper_mold_temp1', 'upper_mold_temp2', 'upper_mold_temp3', 'lower_mold_temp1', 'lower_mold_temp3',
+                       'biscuit_thickness', 'upper_mold_temp1', 'upper_mold_temp3', 'lower_mold_temp1', 'lower_mold_temp3',
                          'sleeve_temperature', 'physical_strength', 'Coolant_temperature', 'EMS_operation_time',
-                  'mold_code']
+                  'mold_code', 'molten_temp']
     
-    action_columns = ['molten_temp', 'lower_mold_temp2', 'cast_pressure']
+    action_columns = ['upper_mold_temp2', 'lower_mold_temp2', 'cast_pressure']
 
 class paths:
     origin_path = 'casting/data/raw/casting_data_origin.csv'
