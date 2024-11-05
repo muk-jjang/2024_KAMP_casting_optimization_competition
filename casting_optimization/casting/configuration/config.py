@@ -62,4 +62,13 @@ class params :
     model_name = 'EXT'
     # model_name = 'LGBM'
     
-
+class optimization:
+    """Configuration for the Bayesian optimization process."""
+    param_bounds: param_bounds={
+        'lower_mold_temp2': (135, 333),
+        'cast_pressure': (300, 1000),
+        'upper_mold_temp2': (100, 270)
+    }
+    init_points: int = 5
+    n_iter: int = 10
+    n_processes: int = 16
