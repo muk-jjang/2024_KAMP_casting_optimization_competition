@@ -1,4 +1,4 @@
-# KAMP_casting_optimization_competition
+# 2024_KAMP_casting_optimization_competition
 KAMP Competition Prescriptor Modeling repository
 
 ## 🚀 Quick Start
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 - FTTransformer
 
 ### 2.2 최적화 알고리즘
-- Baysian Optimization
+- Bayesian Optimization
 
 ## 3. 접근 방법
 1. 데이터 전처리
