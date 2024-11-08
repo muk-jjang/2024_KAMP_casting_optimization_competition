@@ -1,5 +1,4 @@
 # 2024_KAMP_casting_optimization_competition
-KAMP Competition Prescriptor Modeling repository
 
 ## 🚀 Quick Start
 ```
