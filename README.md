@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 
 ## 4. 후속 대처 방안
-- 디지털 트윈 모델을 Continuoual Learning을 통해 지속적으로 업데이트
+- 디지털 트윈 모델을 Continual Learning을 통해 지속적으로 업데이트
 - 최적화 알고리즘을 통해 탐색한 제어값을 실제 설비에 적용
 
 ## Project Structure
